@@ -1,4 +1,8 @@
-```vue
+<script setup>
+// مسیر پایه پروژه برای GitHub Pages
+const baseUrl = import.meta.env.BASE_URL
+</script>
+
 <template>
   <div class="home">
     <!-- =========================
@@ -6,17 +10,11 @@
     ========================== -->
 
     <div class="header">
-      <!-- آیکون اپ -->
-      <img src="/pcos-icon.png" alt="PCOS Smart App" class="app-logo" />
+      <img :src="`${baseUrl}pcos-icon.png`" alt="PCOS Smart App" class="app-logo" />
 
-      <!-- عنوان -->
       <h1>PCOS Smart App</h1>
 
-      <!-- توضیح -->
-      <p class="subtitle">
-        سیستم هوشمند مدیریت و پیش‌بینی
-        <strong>سندرم تخمدان پلی‌کیستیک</strong>
-      </p>
+      <p class="subtitle">سیستم هوشمند مدیریت و پیش‌بینی سندرم تخمدان پلی‌کیستیک</p>
     </div>
 
     <!-- =========================
@@ -24,9 +22,7 @@
     ========================== -->
 
     <div class="menu">
-      <!-- =====================
-           درباره بیماری PCOS
-      ====================== -->
+      <!-- درباره بیماری PCOS -->
 
       <router-link to="/pcos" class="card purple">
         <div class="icon">🧬</div>
@@ -36,9 +32,7 @@
         <p>PCOS چیست؟</p>
       </router-link>
 
-      <!-- =====================
-           داشبورد
-      ====================== -->
+      <!-- داشبورد -->
 
       <router-link to="/dashboard" class="card blue">
         <div class="icon">📊</div>
@@ -48,9 +42,7 @@
         <p>مشاهده اطلاعات</p>
       </router-link>
 
-      <!-- =====================
-           هوش مصنوعی
-      ====================== -->
+      <!-- هوش مصنوعی -->
 
       <router-link to="/prediction" class="card green">
         <div class="icon">🤖</div>
@@ -60,9 +52,7 @@
         <p>پیش‌بینی PCOS</p>
       </router-link>
 
-      <!-- =====================
-           درباره ما
-      ====================== -->
+      <!-- درباره ما -->
 
       <router-link to="/about" class="card orange">
         <div class="icon">ℹ️</div>
@@ -110,8 +100,6 @@
   direction: rtl;
 
   font-family: Arial, 'B Nazanin', sans-serif;
-
-  /* پس زمینه سرمه‌ای حرفه‌ای */
 
   background: radial-gradient(circle at top, #183b66 0%, #0b1f3a 45%, #07172b 100%);
 
@@ -190,14 +178,6 @@ h1 {
   line-height: 2;
 
   max-width: 700px;
-}
-
-/* تأکید روی PCOS */
-
-.subtitle strong {
-  color: #5eead4;
-
-  font-weight: 700;
 }
 
 /* =========================================
@@ -482,4 +462,3 @@ h1 {
   }
 }
 </style>
-```
